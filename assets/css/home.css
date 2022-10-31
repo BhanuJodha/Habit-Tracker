@@ -1,0 +1,31 @@
+.card {
+  width: 100%;
+  padding: .5rem;
+  border-bottom: 1px solid gray;
+}
+
+.card > * {
+  width: 97%;
+  margin-left: auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.card .card-top .time {
+  text-transform: uppercase;
+}
+
+.card .card-top .habit {
+  text-transform: capitalize;
+  color: #e10000;
+  font-weight: 600;
+}
+
+.card .card-middle {
+  width: 100%;
+}
+
+.card .card-middle > :last-child {
+  cursor: pointer;
+  color: yellowgreen;
+}

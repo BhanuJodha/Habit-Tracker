@@ -1,0 +1,33 @@
+.card{
+    width: 100%;
+    padding: .5rem;
+    border-bottom: 1px solid gray;
+
+    &>*{
+        width: 97%;
+        margin-left: auto;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .card-top{
+        .time{
+            text-transform: uppercase;
+        }
+        
+        .habit{
+            text-transform: capitalize;
+            color: #e10000;
+            font-weight: 600;
+        }
+    }
+
+    .card-middle{
+        width: 100%;
+    
+        &>:last-child{
+            cursor: pointer;
+            color: yellowgreen;
+        }
+    }
+}

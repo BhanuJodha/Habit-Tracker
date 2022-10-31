@@ -1,0 +1,22 @@
+<span class="material-symbols-outlined add">
+    add
+</span>
+<span class="heading">
+    <%= title%>
+</span>
+<% if (change_view === "/"){ %>   
+    <a href="<%= change_view%>">
+        <span class="material-symbols-outlined">
+            list
+        </span> 
+    </a>
+<%} else {%>
+    <a href="<%= change_view%>">
+        <span class="material-symbols-outlined">
+            calendar_month
+        </span>
+    </a>
+    <span class="material-symbols-outlined delete">
+        delete
+    </span>
+<% } %>

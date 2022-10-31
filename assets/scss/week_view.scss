@@ -1,0 +1,72 @@
+.calendar{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: .5rem;
+    background-color: white;
+
+    .month{
+        font-weight: 500;
+    }
+}
+
+.week-days{
+    display: grid;
+    grid-template-columns: repeat(7, calc(100% / 7));
+    justify-items: center;
+    background-color: #efefef;
+    
+    &>*{
+        color: gray;
+    }
+}
+
+.habit-container{
+    &>:first-child{
+        display: flex;
+        align-items: center;
+
+        &>*{
+            padding: .5rem;
+        }
+
+        .habit{
+            color: #e10000;
+            font-weight: 600;
+            flex-grow: 1;
+            text-transform: capitalize;
+        }
+
+        .time{
+            text-transform: uppercase;
+        }
+
+        &>:last-child{
+            color: yellowgreen;
+            cursor: pointer;
+        }
+    }
+
+    .daily-status{
+        display: grid;
+        grid-template-columns: repeat(7, auto);
+        column-gap: .3rem;
+        padding-bottom: .5rem;
+        border-bottom: 1px solid gray;
+
+        &>*{
+            cursor: pointer;
+            user-select: none;
+            background-color: #efefef;
+            padding: 0 .3rem;
+            position: relative;
+
+            &>span{
+                position: absolute;
+                right: .3rem;
+                color: blueviolet;
+                pointer-events: none;
+            }
+        }
+    }
+}

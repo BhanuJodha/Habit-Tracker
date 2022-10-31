@@ -1,0 +1,54 @@
+// default srction
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+    line-height: 0;
+}
+
+html{
+    background-color: gray;
+}
+
+#container{
+    max-width: 30rem;
+    min-height: 100vh;
+    margin: auto;
+    background-color: #e1e1e1;
+    
+
+    header{
+        display: flex;
+        background-color: #b9b9b9;
+        padding: .5rem 0;
+        border-bottom: 1px solid black;
+
+        *{
+            margin: 0 .5rem;
+            cursor: pointer;
+        }
+
+        .heading{
+            flex-grow: 1;
+            font-weight: 500;
+        }
+    }
+
+    #body{
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+// common classes
+
+.fav-on{
+    font-variation-settings:
+    'FILL' 1
+}

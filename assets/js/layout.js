@@ -50,11 +50,8 @@
 
 const daysCalc = (date) => {
     const pastDate = new Date(date);
-    const dd = pastDate.getDate();
-    const mm = pastDate.getMonth();
-    const yyyy = pastDate.getFullYear();
     const today = new Date();
-    const diff = (today.getDate() + today.getMonth() + today.getFullYear()) - (dd + mm + yyyy)
+    let diff = parseInt((today - pastDate) / (1000 * 60 * 60 * 24), 10);
     // +1 to include today
     return diff + 1;
 }

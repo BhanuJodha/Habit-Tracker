@@ -15,15 +15,28 @@ exports.toggle = async (req, res) => {
             const today = new Date();
             const createdAt = new Date(habit.createdAt);
 
-            // check if change date is not less than created date
-            // and also not grater than today date
             // +1 to match month indexing
-            if ((today.getFullYear() >= yyyy && yyyy >= createdAt.getFullYear()) &&
-                ((today.getMonth() + 1) >= mm && mm >= (createdAt.getMonth() + 1)) &&
-                (today.getDate() >= dd && dd >= createdAt.getDate())) {
+            if (
+                // check if change date is not less than created date
+                (createdAt.getFullYear() < yyyy ||
+                    (createdAt.getFullYear() == yyyy &&
+                        (createdAt.getMonth() + 1 < mm ||
+                            (createdAt.getMonth() + 1 == mm && createdAt.getDate() <= dd)
+                        )
+                    )
+                ) &&
+                // and also not grater than today date
+                (today.getFullYear() > yyyy ||
+                    (today.getFullYear() == yyyy &&
+                        (today.getMonth() + 1 > mm ||
+                            (today.getMonth() + 1 == mm && today.getDate() >= dd)
+                        )
+                    )
+                )
+            ) {
 
-                let status = await Status.findOne({ habit: habit._id, createdAt: new Date(`${yyyy}-${mm}-${dd}`)});
-                
+                let status = await Status.findOne({ habit: habit._id, createdAt: new Date(`${yyyy}-${mm}-${dd}`) });
+
                 // if status found
                 if (status) {
                     // toggle it

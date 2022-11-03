@@ -103,7 +103,7 @@
     const toggleStatus = async (child) => {
         const parent = child.parentElement;
         const hid = parent.dataset.hid;
-        const dd = child.dataset.dd;
+        const dd = parseInt(child.dataset.dd, 10);
 
         const response = await fetch("/api/v1/status/toggle", {
             method: "post",
